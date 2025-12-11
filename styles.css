@@ -182,8 +182,7 @@ header .container>div {
 /* --- About Section --- */
 .about-section {
     padding: 80px 0;
-    background-image: url(/images/backgroundabout.jpg),
-        url(/images/backgroundabout.jpg);
+    background-image: url(images/backgroundabout.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -413,7 +412,7 @@ header .container>div {
 /* --- Product Section --- */
 .product-section {
     padding: 20px 0;
-    background-image: url(/images/bg2.jpg);
+    background-image: url(images/bg2.jpg);
     background-size: cover;
     background-position: center;
 }
