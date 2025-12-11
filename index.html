@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Công Ty Cổ Phần Tập Đoàn Rạng Đông Việt Nam</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome (Icon) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+
+</head>
+
+<body>
+
+    <!-- Header với hamburger menu -->
+    <header>
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <!-- Company Name -->
+                <div class="fw-bold company-name">CÔNG TY CỔ PHẦN TẬP ĐOÀN RẠNG ĐÔNG VIỆT NAM <br>
+                    <div class="" style="color: white; text-align: center;">Công ty sản xuất thiết bị điện chiếu sáng
+                    </div>
+                </div>
+
+
+                <!-- Mobile Toggle Button -->
+                <button class="mobile-toggle d-md-none" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <!-- Desktop Navigation -->
+                <nav class="main-nav">
+                    <a class="nav-link" href="#">Giới thiệu</a>
+                    <a class="nav-link" href="#san-pham">Sản phẩm</a>
+                    <a class="nav-link" href="#dang-ky">Đăng ký</a>
+                    <a class="nav-link" href="#lien-he">Liên hệ</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('.main-nav');
+            nav.classList.toggle('active');
+        }
+    </script>
+
+    <section class="hero-slider">
+        <div class="slider-wrapper">
+
+            <div class="slide active">
+                <img src="/images/banner.jpg" alt="Banner 1">
+            </div>
+
+            <div class="slide">
+                <img src="/images/banner2.jpg" alt="Banner 2">
+            </div>
+
+            <div class="slide">
+                <img src="/images/banner3.jpg" alt="Banner 3">
+            </div>
+
+        </div>
+
+        <!-- Nút điều hướng -->
+        <button class="slide-btn prev">❮</button>
+        <button class="slide-btn next">❯</button>
+
+        <!-- Dots -->
+        <div class="dots"></div>
+    </section>
+
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <h2 class="text-danger fw-bold text-center mb-4 text-uppercase">Công Ty Cổ Phần Tập Đoàn Rạng Đông Việt Nam
+            </h2>
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <ul class="check-list">
+                        <li>Ánh sáng là một phần quan trọng trong cuộc sống chúng ta, giúp con người thấy được mọi vật
+                            trong bóng tối để làm việc, sinh hoạt.</li>
+                        <li>Ngày nay, khi cuộc sống con người ngày càng được nâng cao, xã hội phát triển thì việc sử
+                            dụng ánh sáng phục vụ cuộc sống ngày càng trở nên đa dạng và phong phú.</li>
+                        <li>Các sản phẩm đèn LED của Công ty cổ phần tập đoàn Rạng Đông đáp ứng nhu cầu chiếu sáng đa
+                            dạng như: dân dụng, công nghiệp, nông nghiệp... với chất lượng cao.</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <img src="../images/img1.jpg" class="img-fluid rounded shadow" alt="Nhà máy">
+                </div>
+            </div>
+            <!-- Small Gallery -->
+            <div class="row mt-4 g-2">
+                <div class="col-4"><img src="/images/img2.png" class="img-fluid rounded" alt="Lab"></div>
+                <div class="col-4"><img src="/images/img3.png" class="img-fluid rounded" alt="Dây chuyền"></div>
+                <div class="col-4"><img src="/images/img3.png" class="img-fluid rounded" alt="Kiểm tra"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Product Section (12 products 3x4) -->
+    <section class="product-section" id="san-pham">
+        <div class="container">
+            <div class="listp">
+                <h2 class="section-title">Danh sách sản phẩm</h2>
+                <p class="text-center text-muted mb-4">12 sản phẩm đèn LED chất lượng cao</p>
+            </div>
+
+            <!-- Row for products -->
+            <div class="row g-4" id="product-grid">
+                <!-- JavaScript sẽ chèn 12 sản phẩm ở đây -->
+            </div>
+
+            <!-- Nút xem thêm -->
+            <div class="text-center mt-5">
+                <button class="btn btn-outline-danger" id="load-more-btn">Xem thêm sản phẩm</button>
+                <div id="loading" class="mt-3" style="display: none;">
+                    <div class="spinner-border text-danger" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <h3 class="mb-4">Vì sao nên lựa chọn đèn LED của <br> <span style="color:var(--primary-yellow)">RẠNG ĐÔNG
+                    VIỆT NAM?</span></h3>
+            <p class="mb-5 fst-italic">Độ bền cao - Giá thành hợp lý - Ánh sáng chất lượng</p>
+
+            <div class="row g-3 justify-content-center">
+                <div class="col-6 col-md-2">
+                    <div class="feature-box">
+                        <i class="fas fa-eye feature-icon"></i>
+                        <div class="small">An Toàn Quang<br>Sinh Học</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-2">
+                    <div class="feature-box">
+                        <i class="fas fa-palette feature-icon"></i>
+                        <div class="small">Chất Lượng Sáng<br>Cao (CRI)</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-2">
+                    <div class="feature-box">
+                        <i class="fas fa-sun feature-icon"></i>
+                        <div class="small">Không Bị Chói<br>Lóa</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-2">
+                    <div class="feature-box">
+                        <i class="fas fa-sliders-h feature-icon"></i>
+                        <div class="small">Điều Chỉnh Màu<br>Ánh Sáng</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-2">
+                    <div class="feature-box">
+                        <i class="fas fa-volume-mute feature-icon"></i>
+                        <div class="small">Không Phát Tiếng<br>Ồn</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-2">
+                    <div class="feature-box">
+                        <i class="fas fa-bolt feature-icon"></i>
+                        <div class="small">Không Nhấp Nháy<br>Hại Mắt</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Policy Section -->
+    <section class="contact-section" id="dang-ky">
+        <div class="col-lg-6 contact-left">
+            <h4 class="text-uppercase mb-4 fw-bold">Công Ty Cổ Phần Tập Đoàn Rạng Đông Việt Nam</h4>
+
+            <div class="policy-item">
+                <i class="fas fa-check-circle policy-icon"></i>
+                <div>Chính sách chiết khấu "SIÊU CAO"</div>
+            </div>
+            <div class="policy-item">
+                <i class="fas fa-check-circle policy-icon"></i>
+                <div>THƯỞNG doanh số quý, năm với giá trị quà tặng lên tới hàng trăm triệu đồng.</div>
+            </div>
+            <div class="policy-item">
+                <i class="fas fa-check-circle policy-icon"></i>
+                <div>HỖ TRỢ gói truyền thông ĐỘT PHÁ, giúp tìm kiếm khách hàng, bùng nổ doanh thu.</div>
+            </div>
+            <div class="policy-item">
+                <i class="fas fa-check-circle policy-icon"></i>
+                <div>Hỗ trợ tờ rơi, tờ gấp, quầy kệ, áo đồng phục.</div>
+            </div>
+            <div class="policy-item">
+                <i class="fas fa-check-circle policy-icon"></i>
+                <div>Hóa đơn VAT đầy đủ, thanh toán nhanh gọn, linh hoạt.</div>
+            </div>
+            <div class="policy-item">
+                <i class="fas fa-check-circle policy-icon"></i>
+                <div>Chính sách BẢO HÀNH UY TÍN lỗi 1 đổi 1 trong vòng 12 tháng.</div>
+            </div>
+        </div>
+
+        <div class="col-lg-6 contact-right">
+            <h3 class="text-white text-center text-uppercase mb-2 fw-bold">Liên hệ ngay để nhận báo giá</h3>
+            <h4 class="text-white text-center text-uppercase mb-4">Và chính sách ưu đãi nhất</h4>
+
+            <form class="contact-form"
+                onsubmit="event.preventDefault(); alert('Cảm ơn bạn đã đăng ký! Chúng tôi sẽ liên hệ sớm.');">
+                <input type="text" class="form-control" placeholder="Họ và tên" required>
+                <input type="tel" class="form-control" placeholder="Số điện thoại" required>
+                <div class="row g-2">
+                    <div class="col-4">
+                        <select id="city" class="form-select">
+                            <option value="">Tỉnh/thành</option>
+                        </select>
+                    </div>
+                    <div class="col-4">
+                        <select id="district" class="form-select">
+                            <option value="">Quận/huyện</option>
+                        </select>
+                    </div>
+                    <div class="col-4">
+                        <select id="ward" class="form-select">
+                            <option value="">Phường/xã</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="mt-3 mb-3">
+                    <select class="form-select">
+                        <option>Mời lựa chọn sản phẩm quan tâm</option>
+                        <option>Đèn LED Dân dụng</option>
+                        <option>Đèn Năng lượng mặt trời</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-submit">TƯ VẤN NGAY</button>
+                <p class="text-white text-center mt-3 fst-italic">Cảm ơn Quý khách hàng!</p>
+            </form>
+        </div>
+    </section>
+    <!-- ===== POPUP BÁO GIÁ ===== -->
+    <div id="price-popup" class="popup-overlay">
+        <div class="popup-container">
+
+            <!-- LEFT -->
+            <div class="popup-left">
+                <h2 class="popup-left-title">TẬP ĐOÀN<br>RẠNG ĐÔNG</h2>
+
+                <div class="popup-left-icon">
+                    <i class="fas fa-eye"></i>
+                    <i class="fas fa-thumbs-up ms-2"></i>
+                </div>
+
+                <ul class="popup-left-list">
+                    <li>Độ bền cao</li>
+                    <li>Giá thành hợp lý</li>
+                    <li>Ánh sáng chất lượng</li>
+                    <li>An toàn sinh học</li>
+                    <li>Không bị chói</li>
+                    <li>Không nhấp nháy</li>
+                    <li>Không phát tiếng ồn</li>
+                    <li>Điều chỉnh màu ánh sáng</li>
+                </ul>
+            </div>
+
+            <!-- RIGHT -->
+            <div class="popup-right">
+
+                <button class="popup-close" onclick="closePopup()">×</button>
+
+                <h3 class="popup-title">NHẬN BÁO GIÁ VÀ CHÍNH SÁCH</h3>
+                <p class="popup-sub">Tư vấn sản phẩm LED – chính sách tốt nhất tại Việt Nam</p>
+
+                <form id="priceForm" onsubmit="return submitPriceForm(event)">
+
+                    <input name="name" class="form-control popup-input" placeholder="Họ và tên" required>
+                    <input name="phone" class="form-control popup-input" placeholder="Số điện thoại" required>
+
+                    <div class="row g-2 mb-2">
+                        <div class="col-4">
+                            <select id="popup-city" name="city" class="form-select popup-input" required>
+                                <option value="">Tỉnh/TP</option>
+                            </select>
+                        </div>
+                        <div class="col-4">
+                            <select id="popup-district" name="district" class="form-select popup-input" required>
+                                <option value="">Quận/huyện</option>
+                            </select>
+                        </div>
+                        <div class="col-4">
+                            <select id="popup-ward" name="ward" class="form-select popup-input" required>
+                                <option value="">Phường/xã</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <input type="hidden" id="productNameInput" name="product">
+
+                    <button type="submit" class="popup-submit-btn">TƯ VẤN NGAY</button>
+                </form>
+
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    <footer class="rd-footer">
+        <div class="container footer-inner">
+
+            <div class="footer-col">
+                <h3 class="footer-title">CÔNG TY CỔ PHẦN TẬP ĐOÀN RẠNG ĐÔNG VIỆT NAM</h3>
+                <h4 class="footer-sub">THÔNG TIN LIÊN HỆ</h4>
+
+                <div class="footer-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>Hotline: 0978 519 855</span>
+                </div>
+                <div class="footer-item">
+                    <i class="fas fa-globe"></i>
+                    <span>Website: tapdoanrangdong.net</span>
+                </div>
+                <div class="footer-item">
+                    <i class="far fa-clock"></i>
+                    <span>Thời gian làm việc 8:00 – 17:00 (Th2 – Th7)</span>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <div class="footer-item">
+                    <i class="fas fa-home"></i>
+                    <span>Địa chỉ: Khu công nghiệp Kim Chung, Hoài Đức, Thành phố Hà Nội</span>
+                </div>
+
+                <div class="footer-item">
+                    <i class="fas fa-file-invoice"></i>
+                    <span>Mã số thuế: 1001301266</span>
+                </div>
+
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2025 AT All Rights Reserved.
+        </div>
+    </footer>
+
+
+    <!-- Floating Phone Button -->
+    <a href="tel:19000000" class="floating-phone">
+        <i class="fas fa-phone-alt"></i>
+    </a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/location.js"></script>
+    <script src="js/slider.js"></script>
+
+
+
+</body>
+
+</html>
