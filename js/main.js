@@ -30,15 +30,15 @@ async function submitPriceForm(e) {
 
         const result = await response.json();
         console.log(result);
+
+        showToast("🎉 Gửi yêu cầu tư vấn thành công!");
+        closePopup();
+        form.reset();
     } catch (err) {
         console.error("Fetch error:", err);
+        showToast("❌ Gửi thất bại, vui lòng thử lại!");
     }
 }
-
-
-
-
-
 
 
 // Xuất hàm ra global
@@ -140,3 +140,23 @@ document.addEventListener("DOMContentLoaded", () => {
 // Xuất hàm để HTML có thể gọi
 window.showPrice = showPrice;
 window.closePopup = closePopup;
+
+function showToast(message) {
+    console.log("Toast:", message);
+
+    const container = document.getElementById("toast-container");
+    if (!container) {
+        console.error("Không tìm thấy #toast-container");
+        return;
+    }
+
+    const toast = document.createElement("div");
+    toast.className = "rd-toast";
+    toast.textContent = message;
+
+    container.appendChild(toast);
+
+    setTimeout(() => toast.remove(), 3000);
+}
+
+

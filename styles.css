@@ -15,6 +15,41 @@ body {
 }
 
 /* --- Header --- */
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.company-block {
+    flex: 1;
+}
+
+.company-name {
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.1;
+    white-space: nowrap;
+}
+
+.company-desc {
+    font-size: 11px;
+    color: white;
+    margin-top: 2px;
+    padding-left: 10px;
+}
+
+.mobile-toggle {
+    font-size: 26px;
+    background: none;
+    color: white;
+    border: none;
+    margin-left: 20px;
+    flex-shrink: 0;
+
+}
+
 header {
     background-color: #b71c1c;
     color: white;
@@ -27,6 +62,7 @@ header {
     border-bottom: 2px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
+
 
 .hero-section {
     width: 100%;
@@ -54,7 +90,7 @@ header .container>div {
 .company-name {
     font-size: 1.2rem;
     white-space: nowrap;
-    color: rgb(141, 129, 19);
+    color: rgb(224, 215, 128);
     text-transform: uppercase;
     letter-spacing: 0.5px;
     flex-shrink: 0;
@@ -613,7 +649,7 @@ header .container>div {
 }
 
 .contact-right {
-   background-color: #996d1ccb;
+    background-color: #996d1ccb;
     padding: 60px;
     display: flex;
     flex-direction: column;
@@ -1023,7 +1059,7 @@ footer {
     margin-top: 25px;
     text-align: center;
     padding-top: 15px;
-    border-top: 1px solid rgba(255,255,255,0.3);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
     font-size: 0.9rem;
     opacity: 0.9;
 }
@@ -1033,10 +1069,12 @@ footer {
     .footer-inner {
         flex-direction: column;
     }
+
     .footer-col {
         margin-bottom: 20px;
     }
 }
+
 .hero-slider {
     position: relative;
     width: 100%;
@@ -1068,7 +1106,7 @@ footer {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(255,255,255,0.4);
+    background: rgba(255, 255, 255, 0.4);
     border: none;
     font-size: 2rem;
     padding: 8px 15px;
@@ -1079,11 +1117,16 @@ footer {
 }
 
 .slide-btn:hover {
-    background: rgba(255,255,255,0.7);
+    background: rgba(255, 255, 255, 0.7);
 }
 
-.prev { left: 20px; }
-.next { right: 20px; }
+.prev {
+    left: 20px;
+}
+
+.next {
+    right: 20px;
+}
 
 /* Dots */
 .dots {
@@ -1097,7 +1140,7 @@ footer {
     display: inline-block;
     width: 12px;
     height: 12px;
-    background: rgba(255,255,255,0.6);
+    background: rgba(255, 255, 255, 0.6);
     margin: 0 5px;
     border-radius: 50%;
     cursor: pointer;
@@ -1114,7 +1157,66 @@ footer {
     .hero-slider {
         height: 260px;
     }
+
     .slide-btn {
         font-size: 1.5rem;
+    }
+}
+
+
+/* =======================
+      TOAST NOTIFICATION
+========================= */
+#toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 999999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.rd-toast {
+    z-index: 999999999 !important;
+
+    opacity: 1 !important;
+    min-width: 260px;
+    padding: 15px 20px;
+    background-color: #166ddf;
+    /* Vàng thương hiệu */
+    color: #153e5c;
+    /* Xanh Rạng Đông */
+    font-weight: 600;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlideIn 0.4s forwards, fadeOut 0.4s 2.6s forwards;
+}
+
+/* Animation vào */
+@keyframes fadeSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation biến mất */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(20px);
     }
 }

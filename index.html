@@ -17,32 +17,34 @@
 
 <body>
 
-    <!-- Header với hamburger menu -->
     <header>
         <div class="container">
-            <div class="d-flex justify-content-between align-items-center">
-                <!-- Company Name -->
-                <div class="fw-bold company-name">CÔNG TY CỔ PHẦN TẬP ĐOÀN RẠNG ĐÔNG VIỆT NAM <br>
-                    <div class="" style="color: white; text-align: center;">Công ty sản xuất thiết bị điện chiếu sáng
-                    </div>
+            <div class="header-row">
+
+                <!-- LEFT: tên công ty -->
+                <div class="company-block">
+                    <div class="company-name">CÔNG TY CỔ PHẦN TẬP ĐOÀN RẠNG ĐÔNG VIỆT NAM</div>
+                    <div class="company-desc">CÔNG TY SẢN XUẤT THIẾT BỊ ĐIỆN CHIẾU SÁNG</div>
                 </div>
 
-
-                <!-- Mobile Toggle Button -->
+                <!-- RIGHT: icon menu -->
                 <button class="mobile-toggle d-md-none" onclick="toggleMenu()">
                     <i class="fas fa-bars"></i>
                 </button>
 
-                <!-- Desktop Navigation -->
+                <!-- NAV -->
                 <nav class="main-nav">
                     <a class="nav-link" href="#">Giới thiệu</a>
                     <a class="nav-link" href="#san-pham">Sản phẩm</a>
                     <a class="nav-link" href="#dang-ky">Đăng ký</a>
                     <a class="nav-link" href="#lien-he">Liên hệ</a>
                 </nav>
+
             </div>
         </div>
     </header>
+
+
 
     <script>
         function toggleMenu() {
@@ -282,7 +284,7 @@
                 <h3 class="popup-title">NHẬN BÁO GIÁ VÀ CHÍNH SÁCH</h3>
                 <p class="popup-sub">Tư vấn sản phẩm LED – chính sách tốt nhất tại Việt Nam</p>
 
-                <form id="priceForm" onsubmit="return submitPriceForm(event)">
+                <form id="priceForm">
 
                     <input name="name" class="form-control popup-input" placeholder="Họ và tên" required>
                     <input name="phone" class="form-control popup-input" placeholder="Số điện thoại" required>
@@ -379,7 +381,7 @@
     <script src="/js/slider.js"></script>
 
 
-
+    <div id="toast-container"></div>
 </body>
 
 </html>
