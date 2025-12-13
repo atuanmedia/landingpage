@@ -217,8 +217,8 @@
             <h3 class="text-white text-center text-uppercase mb-2 fw-bold">Liên hệ ngay để nhận báo giá</h3>
             <h4 class="text-white text-center text-uppercase mb-4">Và chính sách ưu đãi nhất</h4>
 
-            <form class="contact-form"
-                onsubmit="event.preventDefault(); alert('Cảm ơn bạn đã đăng ký! Chúng tôi sẽ liên hệ sớm.');">
+            <form class="contact-form" id="contactForm">
+
                 <input type="text" class="form-control" placeholder="Họ và tên" required>
                 <input type="tel" class="form-control" placeholder="Số điện thoại" required>
                 <div class="row g-2">
@@ -382,6 +382,16 @@
 
 
     <div id="toast-container"></div>
+
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            showToast("🎉 Cảm ơn bạn đã đăng ký!<br>Chúng tôi sẽ liên hệ sớm nhất.");
+            this.reset();
+        });
+    </script>
+
 </body>
 
 </html>

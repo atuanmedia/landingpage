@@ -1167,56 +1167,57 @@ footer {
 /* =======================
       TOAST NOTIFICATION
 ========================= */
+/* Container giữa màn hình */
 #toast-container {
     position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 999999;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99999;
+    pointer-events: none;
 }
 
+/* Toast trắng tối giản */
 .rd-toast {
-    z-index: 999999999 !important;
-
-    opacity: 1 !important;
+    background: #ffffff;
+    color: #333;
+    padding: 14px 22px;
+    border-radius: 16px;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    text-align: center;
     min-width: 260px;
-    padding: 15px 20px;
-    background-color: #166ddf;
-    /* Vàng thương hiệu */
-    color: #153e5c;
-    /* Xanh Rạng Đông */
-    font-weight: 600;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeSlideIn 0.4s forwards, fadeOut 0.4s 2.6s forwards;
+    max-width: 90vw;
+    animation: toastSoft 2.8s ease forwards;
+    border: 1px solid #eee;
 }
 
-/* Animation vào */
-@keyframes fadeSlideIn {
-    from {
+/* Icon nhỏ xinh */
+.rd-toast::before {
+    content: "✔";
+    display: inline-block;
+    margin-right: 6px;
+    color: #2e7d32;
+    font-weight: bold;
+}
+
+/* Animation nhẹ */
+@keyframes toastSoft {
+    0% {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(10px) scale(0.96);
     }
-
-    to {
+    15% {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
     }
-}
-
-/* Animation biến mất */
-@keyframes fadeOut {
-    from {
+    85% {
         opacity: 1;
-        transform: translateY(0);
     }
-
-    to {
+    100% {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(-6px) scale(0.96);
     }
 }
+
